@@ -8,7 +8,9 @@ public class Input {
                 " \n Insert: N (North), S (South), E (East) or/and W (West)");
 
         String response = input.nextLine();  // Read user input
-        String directions = response.toUpperCase().trim();
+        String direction = response.toUpperCase().trim();
+        String directions = direction.replaceAll("\\s", "");
+        System.out.println(directions);
         validateInput(directions);
         //System.out.println("The direction(s) chosen is(are): " + directions);
         input.close();
@@ -29,7 +31,7 @@ public class Input {
 
             for (char character : cardinalPoints) {
                 if (character != 'N' && character != 'S' && character != 'E' && character != 'W') {
-                    System.out.println("This input is not valid. Please insert correct options and without spaces. \n");
+                    System.out.println("This input is not valid. Please insert correct options. \n");
                     demandInput();
                     break;
                 }
