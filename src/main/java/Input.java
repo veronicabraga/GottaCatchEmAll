@@ -24,7 +24,7 @@ public class Input {
         return directions;
     }
 
-    private boolean validateInput(String answer) {
+    public boolean validateInput(String answer) {
 
         if (!answer.isEmpty()) {
             char[] cardinalPoints = answer.toCharArray();
@@ -37,6 +37,7 @@ public class Input {
             }
             return true;
         }
+
         System.out.println("Empty answer. Please, choose one or more directions. \n");
         return false;
 
