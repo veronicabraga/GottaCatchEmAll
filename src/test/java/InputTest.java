@@ -1,15 +1,42 @@
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 
 import static org.junit.Assert.assertEquals;
 
 public class InputTest {
 
     private Input input;
+    private InputStream systemIn = System.in;
+    private ByteArrayInputStream testIn;
+
 
     @Before
     public void setUp() {
         input = new Input();
+    }
+
+    private void provideInput(String data) {
+        testIn = new ByteArrayInputStream(data.getBytes());
+        System.setIn(testIn);
+    }
+
+    @After
+    public void restoreSystemInput() {
+        System.setIn(systemIn);
+    }
+
+    @Test
+    public void demandInputTest() {
+        String testString = "NWSESWEN";
+        provideInput(testString);
+
+        String directions = input.demandInput();
+
+        assertEquals(testString, directions);
     }
 
     @Test
