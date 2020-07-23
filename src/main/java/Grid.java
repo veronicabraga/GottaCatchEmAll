@@ -13,23 +13,23 @@ public class Grid {
     }
 
     public void initGrid() {
-        int[] position = {0,0};
-        grid.put(position, 0);
+        int[] coordinate = {0,0};
+        grid.put(coordinate, 0);
     }
 
 
-    public boolean gridContainsKey(int[] position) {
+    public boolean containsKey(int[] coordinate) {
         Set<Map.Entry<int[], Integer>> gridSet = grid.entrySet();
         for (Map.Entry<int[], Integer> entry : gridSet) {
-            if (Arrays.equals(entry.getKey(), position)) {
+            if (Arrays.equals(entry.getKey(), coordinate)) {
                 return true;
             }
         }
         return false;
     }
 
-    public void addCell(int[] position, int point) {
-        grid.put(position, point);
+    public void addCell(int[] coordinate, int point) {
+        grid.put(coordinate, point);
     }
 
 }

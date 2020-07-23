@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-
 public class Game {
 
     private Grid grid;
@@ -22,62 +20,45 @@ public class Game {
 
         for (char character : cardinalPoints) {
             int[] position = {ash.getCurrentPosition().getRow(), ash.getCurrentPosition().getCol()};
-
+            int[] coordinate;
             switch(character) {
 
                 case 'N':
-                    ash.getCurrentPosition().moveInDirection(Direction.N);
-                    System.out.println(ash.getCurrentPosition().getRow() + ", " + ash.getCurrentPosition().getCol());
-                    Array.setInt(position, 0, ash.getCurrentPosition().getRow());
-                    Array.setInt(position, 1, ash.getCurrentPosition().getCol());
 
-                    if (!grid.gridContainsKey(position)) {
-                        grid.addCell(position, 0);
+                   coordinate = ash.updateCurrentPosition(Direction.N);
+
+                    if (!grid.containsKey(coordinate)) {
+                        grid.addCell(coordinate, 0);
                         points +=1;
                     }
                     System.out.println(points);
                     break;
 
                 case 'S':
-                    ash.getCurrentPosition().moveInDirection(Direction.S);
+                    coordinate = ash.updateCurrentPosition(Direction.S);
 
-                    System.out.println(ash.getCurrentPosition().getRow() + ", " + ash.getCurrentPosition().getCol());
-
-                    Array.setInt(position, 0, ash.getCurrentPosition().getRow());
-                    Array.setInt(position, 1, ash.getCurrentPosition().getCol());
-
-                    if (!grid.gridContainsKey(position)) {
-                        grid.addCell(position, 0);
+                    if (!grid.containsKey(coordinate)) {
+                        grid.addCell(coordinate, 0);
                         points +=1;
                     }
                     System.out.println(points);
                     break;
 
                 case 'E':
-                    ash.getCurrentPosition().moveInDirection(Direction.E);
+                    coordinate = ash.updateCurrentPosition(Direction.E);
 
-                    System.out.println(ash.getCurrentPosition().getRow() + ", " + ash.getCurrentPosition().getCol());
-
-                    Array.setInt(position, 0, ash.getCurrentPosition().getRow());
-                    Array.setInt(position, 1, ash.getCurrentPosition().getCol());
-
-                    if (!grid.gridContainsKey(position)) {
-                        grid.addCell(position, 0);
+                    if (!grid.containsKey(coordinate)) {
+                        grid.addCell(coordinate, 0);
                         points +=1;
                     }
                     System.out.println(points);
                     break;
 
                 case 'W':
-                    ash.getCurrentPosition().moveInDirection(Direction.W);
+                    coordinate = ash.updateCurrentPosition(Direction.W);
 
-                    System.out.println(ash.getCurrentPosition().getRow() + ", " + ash.getCurrentPosition().getCol());
-
-                    Array.setInt(position, 0, ash.getCurrentPosition().getRow());
-                    Array.setInt(position, 1, ash.getCurrentPosition().getCol());
-
-                    if (!grid.gridContainsKey(position)) {
-                        grid.addCell(position, 0);
+                    if (!grid.containsKey(coordinate)) {
+                        grid.addCell(coordinate, 0);
                         points +=1;
                     }
                     System.out.println(points);
