@@ -22,6 +22,7 @@ public class Grid {
         Set<Map.Entry<int[], Integer>> gridSet = grid.entrySet();
         for (Map.Entry<int[], Integer> entry : gridSet) {
             if (Arrays.equals(entry.getKey(), coordinate)) {
+                addCell(coordinate, 0);
                 return true;
             }
         }

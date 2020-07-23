@@ -19,54 +19,37 @@ public class Game {
         char[] cardinalPoints = directions.toCharArray();
 
         for (char character : cardinalPoints) {
-            int[] position = {ash.getCurrentPosition().getRow(), ash.getCurrentPosition().getCol()};
             int[] coordinate;
+
             switch(character) {
 
                 case 'N':
-
-                   coordinate = ash.updateCurrentPosition(Direction.N);
-
-                    if (!grid.containsKey(coordinate)) {
-                        grid.addCell(coordinate, 0);
-                        points +=1;
-                    }
-                    System.out.println(points);
+                    coordinate = ash.updateCurrentPosition(Direction.N);
+                    gridContainsKey(coordinate);
                     break;
 
                 case 'S':
                     coordinate = ash.updateCurrentPosition(Direction.S);
-
-                    if (!grid.containsKey(coordinate)) {
-                        grid.addCell(coordinate, 0);
-                        points +=1;
-                    }
-                    System.out.println(points);
+                    gridContainsKey(coordinate);
                     break;
 
                 case 'E':
                     coordinate = ash.updateCurrentPosition(Direction.E);
-
-                    if (!grid.containsKey(coordinate)) {
-                        grid.addCell(coordinate, 0);
-                        points +=1;
-                    }
-                    System.out.println(points);
+                    gridContainsKey(coordinate);
                     break;
 
                 case 'W':
                     coordinate = ash.updateCurrentPosition(Direction.W);
-
-                    if (!grid.containsKey(coordinate)) {
-                        grid.addCell(coordinate, 0);
-                        points +=1;
-                    }
-                    System.out.println(points);
+                    gridContainsKey(coordinate);
                     break;
 
             }
+        }
+    }
 
-
+    public void gridContainsKey(int[] coordinate) {
+        if (!grid.containsKey(coordinate)) {
+            points +=1;
         }
     }
 
