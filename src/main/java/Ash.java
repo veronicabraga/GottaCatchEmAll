@@ -10,6 +10,10 @@ public class Ash {
 
     }
 
+    public void setCurrentPosition(Position currentPosition) {
+        this.currentPosition = currentPosition;
+    }
+
     public int[] updateCurrentPosition(Direction direction) {
         int[] coordinate = {currentPosition.getRow(), currentPosition.getCol()};
         currentPosition.moveInDirection(direction);
