@@ -10,6 +10,10 @@ public class Ash {
 
     }
 
+    public Position getCurrentPosition() {
+        return currentPosition;
+    }
+
     public void setCurrentPosition(Position currentPosition) {
         this.currentPosition = currentPosition;
     }

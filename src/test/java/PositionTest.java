@@ -11,7 +11,6 @@ public class PositionTest {
 
     @Before
     public void setUp() {
-
         position = new Position(0, 0);
     }
 
