@@ -17,6 +17,9 @@ public class Grid {
         grid.put(coordinate, 0);
     }
 
+    public Map<int[], Integer> getGrid() {
+        return grid;
+    }
 
     public boolean containsKey(int[] coordinate) {
         Set<Map.Entry<int[], Integer>> gridSet = grid.entrySet();
