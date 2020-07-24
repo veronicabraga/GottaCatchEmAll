@@ -8,5 +8,6 @@ public class Main {
         Game game = new Game();
         game.moveAsh(directions);
         System.out.println("Ash captured " + game.getPoints() + " Pokemon.");
+
     }
 }

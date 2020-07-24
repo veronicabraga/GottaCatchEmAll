@@ -1,3 +1,5 @@
+
+
 public class Game {
 
     private Grid grid;
@@ -15,6 +17,7 @@ public class Game {
         return points;
     }
 
+
     public void moveAsh(String directions) {
         char[] cardinalPoints = directions.toCharArray();
 
@@ -25,30 +28,31 @@ public class Game {
 
                 case 'N':
                     coordinate = ash.updateCurrentPosition(Direction.N);
-                    gridContainsKey(coordinate);
+                    handleCells(coordinate);
                     break;
 
                 case 'S':
                     coordinate = ash.updateCurrentPosition(Direction.S);
-                    gridContainsKey(coordinate);
+                    handleCells(coordinate);
                     break;
 
                 case 'E':
                     coordinate = ash.updateCurrentPosition(Direction.E);
-                    gridContainsKey(coordinate);
+                    handleCells(coordinate);
                     break;
 
                 case 'W':
                     coordinate = ash.updateCurrentPosition(Direction.W);
-                    gridContainsKey(coordinate);
+                    handleCells(coordinate);
                     break;
 
             }
         }
     }
 
-    public void gridContainsKey(int[] coordinate) {
+    public void handleCells(int[] coordinate) {
         if (!grid.containsKey(coordinate)) {
+            grid.addCell(coordinate, 0);
             points +=1;
         }
     }
