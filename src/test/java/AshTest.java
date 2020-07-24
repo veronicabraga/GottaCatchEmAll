@@ -1,7 +1,9 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import java.util.Arrays;
+
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 public class AshTest {
@@ -25,6 +27,15 @@ public class AshTest {
         verify(currentPositionMock, times(2) ).getRow();
         verify(currentPositionMock, times(2) ).getCol();
 
+    }
+
+    @Test
+    public void updateCurrentPositionNTest() {
+        int[] coordinate = ash.updateCurrentPosition(Direction.N);
+        int[] expected = {-1, 0};
+        boolean result = Arrays.equals(expected, coordinate);
+
+        assertTrue(result);
     }
 
 
