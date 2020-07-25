@@ -43,25 +43,6 @@ public class GridTest {
     }
 
     @Test
-    public void getGridTest() {
-        int[] coordinate = new int[2];
-        int value = 0;
-        Set<Map.Entry<int[], Integer>> gridSet = grid.getGrid().entrySet();
-        for (Map.Entry<int[], Integer> entry : gridSet) {
-            coordinate = entry.getKey();
-            value = entry.getValue();
-        }
-
-        int[] expectedCoordinate = {0, 0};
-        int expectedValue = 0;
-        boolean result = Arrays.equals(expectedCoordinate, coordinate);
-
-        assertTrue(result);
-        assertEquals(expectedValue, value);
-    }
-
-
-    @Test
     public void containsKeyTrue() {
         int[] coordinate = {0, 0};
         boolean result = grid.containsKey(coordinate);
