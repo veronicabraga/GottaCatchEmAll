@@ -21,6 +21,10 @@ public class Game {
         this.grid = grid;
     }
 
+    public void setAsh(Ash ash) {
+        this.ash = ash;
+    }
+
     public void moveAsh(String directions) {
         char[] cardinalPoints = directions.toCharArray();
 
@@ -48,7 +52,6 @@ public class Game {
                     coordinate = ash.updateCurrentPosition(Direction.W);
                     handleCells(coordinate);
                     break;
-
             }
         }
     }
@@ -59,7 +62,4 @@ public class Game {
             points +=1;
         }
     }
-
-
-
 }
