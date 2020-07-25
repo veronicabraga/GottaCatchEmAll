@@ -101,26 +101,4 @@ public class AshTest {
 
         assertTrue(result);
     }
-
-    @Test
-    public void setCurrentPositionTest() {
-        Position currentPositionMock = mock(Position.class);
-        ash.setCurrentPosition(currentPositionMock);
-
-        assertEquals(currentPositionMock, ash.getCurrentPosition());
-
-    }
-
-    @Test
-    public void getCurrentPositionTest() {
-        Position result = ash.getCurrentPosition();
-        Position expected = new Position(0, 0);
-
-        assertEquals(expected.getRow(), result.getRow());
-        assertEquals(expected.getCol(), result.getCol());
-    }
-
-
-
-
 }
