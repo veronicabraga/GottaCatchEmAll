@@ -44,9 +44,20 @@ public class GridTest {
 
     @Test
     public void getGridTest() {
-        Map<int[], Integer> result = grid.getGrid();
+        int[] coordinate = new int[2];
+        int value = 0;
+        Set<Map.Entry<int[], Integer>> gridSet = grid.getGrid().entrySet();
+        for (Map.Entry<int[], Integer> entry : gridSet) {
+            coordinate = entry.getKey();
+            value = entry.getValue();
+        }
 
-        assertNotNull(result);
+        int[] expectedCoordinate = {0, 0};
+        int expectedValue = 0;
+        boolean result = Arrays.equals(expectedCoordinate, coordinate);
+
+        assertTrue(result);
+        assertEquals(expectedValue, value);
     }
 
 
@@ -82,15 +93,17 @@ public class GridTest {
         int value = 0;
         grid.addCell(coordinate, value);
 
-        Set<Map.Entry<int[], Integer>> gridSet = grid.getGrid().entrySet();
-        for (Map.Entry<int[], Integer> entry : gridSet) {
-            coordinate = entry.getKey();
-            value = entry.getValue();
-        }
-
+        boolean result = false;
         int[] expectedCoordinate = {0, 1};
         int expectedValue = 0;
-        boolean result = Arrays.equals(expectedCoordinate, coordinate);
+
+        Set<Map.Entry<int[], Integer>> gridSet = grid.getGrid().entrySet();
+        for (Map.Entry<int[], Integer> entry : gridSet) {
+            if (Arrays.equals(expectedCoordinate, entry.getKey())) {
+                value = entry.getValue();
+                result = true;
+            }
+        }
 
         assertTrue(result);
         assertEquals(expectedValue, value);
