@@ -1,3 +1,5 @@
+import org.challenge.Direction;
+import org.challenge.Position;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;

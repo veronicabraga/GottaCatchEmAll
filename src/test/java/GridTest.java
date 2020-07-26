@@ -1,3 +1,4 @@
+import org.challenge.Grid;
 import org.junit.Before;
 import org.junit.Test;
 

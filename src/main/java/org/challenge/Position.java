@@ -1,3 +1,4 @@
+package org.challenge;
 
 /**
  * Represents a position in a grid of columns and rows
