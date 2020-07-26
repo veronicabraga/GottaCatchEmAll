@@ -1,3 +1,4 @@
+package org.challenge;
 
 /**
  * Declares all possible Directions options

@@ -1,4 +1,4 @@
-
+package org.challenge;
 
 public class Main {
 

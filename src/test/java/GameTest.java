@@ -1,3 +1,7 @@
+import org.challenge.Ash;
+import org.challenge.Direction;
+import org.challenge.Game;
+import org.challenge.Grid;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;

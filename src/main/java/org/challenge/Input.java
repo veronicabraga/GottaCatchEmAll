@@ -1,3 +1,5 @@
+package org.challenge;
+
 import java.util.Scanner;
 
 public class Input {
