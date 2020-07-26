@@ -5,7 +5,7 @@ import java.util.Set;
 
 
 /**
- * Represents the grid where the player Ash will move to capture pokemon
+ * Represents the grid where the character Ash will move to capture pokemon
  */
 public class Grid {
 
