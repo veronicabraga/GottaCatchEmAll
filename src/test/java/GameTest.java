@@ -75,6 +75,16 @@ public class GameTest {
     }
 
     @Test
+    public void moveAshTest() {
+        String directions = "NESW";
+        String repeated = new String(new char[100]).replace("\0", directions);
+        game.moveAsh(repeated);
+        int expectedPoints = 4;
+
+        assertEquals(expectedPoints, game.getPoints());
+    }
+
+    @Test
     public void handleCellsTestAddPoint() {
         int[] coordinate = {0, 1};
         game.handleCells(coordinate);
