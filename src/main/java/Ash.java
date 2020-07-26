@@ -2,7 +2,7 @@ import java.lang.reflect.Array;
 
 
 /**
- * Represents the player who will capture the pokemon
+ * Represents the character who will capture the pokemon
  */
 public class Ash {
 
